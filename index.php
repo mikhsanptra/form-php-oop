@@ -46,6 +46,25 @@
         button:hover {
             background: #357abd;
         }
+        .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px;
+    }
+
+    .btn-group button {
+    width: auto; 
+    padding: 10px 20px;
+    }
+
+    .reset-btn {
+    background: #aaa;
+    }
+
+    .reset-btn:hover {
+    background: #888;
+    }
     </style>
 </head>
 <body>
@@ -56,7 +75,10 @@
         <input type="text" name="lastname" placeholder="Lastname" required>
         <input type="text" name="phone" placeholder="Phone Number" required>
         <textarea name="address" placeholder="Address" required></textarea>
-        <button type="submit">Submit</button>
+        <div class="btn-group">
+    <button type="submit">Submit</button>
+    <button type="reset" class="reset-btn">Reset</button>
+</div>
     </form>
 </div>
 
