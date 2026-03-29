@@ -68,13 +68,30 @@ $user = new User(
             text-decoration: none;
             color: #4a90e2;
         }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+            cursor: pointer;
+}
+
+.btn:hover {
+    background: #357abd;
+}
     </style>
 </head>
 <body>
 
 <div class="container">
     <?php echo $user->tampilData(); ?>
-    <a href="index.php">Reset</a>
+    <a href="index.php" class="btn">Reset</a>
 </div>
 
 </body>
