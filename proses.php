@@ -18,10 +18,11 @@ class User {
         <p>Hi, my name is <b>{$this->firstname} {$this->lastname}</b></p>
         <p>Phone Number : {$this->phone}</p>
         <p>Address : {$this->address}</p>
-        ";
+        <hr>
+        <p style='color:green;'>Data berhasil dikirim!</p>
+    ";
     }
-}
-
+} 
 $user = new User(
     $_POST['firstname'],
     $_POST['lastname'],
