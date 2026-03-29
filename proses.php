@@ -1,5 +1,13 @@
 <?php
+session_start();
 
+if (!isset($_SESSION['user_data'])) {
+    header("Location: index.php");
+    exit();
+}
+
+$data = $_SESSION['user_data'];
+unset($_SESSION['user_data']);
 class User {
     private $firstname;
     private $lastname;
@@ -15,19 +23,19 @@ class User {
 
     public function tampilData() {
         return "
-        <p>Hi, my name is <b>{$this->firstname} {$this->lastname}</b></p>
-        <p>Phone Number : {$this->phone}</p>
-        <p>Address : {$this->address}</p>
+        <p>Hi, my name is <b>" . htmlspecialchars($this->firstname) . " " . htmlspecialchars($this->lastname) . "</b></p>
+        <p>Phone Number : " . htmlspecialchars($this->phone) . "</p>
+        <p>Address : " . htmlspecialchars($this->address) . "</p>
         <hr>
         <p style='color:green;'>Data berhasil dikirim!</p>
     ";
     }
 } 
 $user = new User(
-    $_POST['firstname'],
-    $_POST['lastname'],
-    $_POST['phone'],
-    $_POST['address']
+    $data['firstname'],
+    $data['lastname'],
+    $data['phone'],
+    $data['address']
 );
 ?>
 
